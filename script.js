@@ -88,18 +88,33 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
+
+
+//Prompt For User to enter Password 
+let passwordlenght = +prompt("Your Password length")
+
+console.log(passwordlenght)
+
+
+
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+
+
 
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-}
 
 // Function to generate password with user input
 function generatePassword() {
+
+
 
 }
 
@@ -116,3 +131,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
+
