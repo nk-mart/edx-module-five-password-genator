@@ -96,6 +96,20 @@ let passwordlength = +prompt("Your Password length");
 
 console.log(passwordlength)
 
+
+
+// User Options When generating Password
+let lowerCase = confirm('Character Type: LowerCase')
+
+let upperCase = confirm('Character Type: UpperCase')
+
+let numeric = confirm('Character Type: Numeric')
+
+let specialCharacter = confirm('Character Type: Special-Characters')
+
+ console.log(lowerCase, upperCase, numeric)
+
+
 //User Password 
 let userPassword = "";
 
@@ -105,10 +119,13 @@ function getPasswordOptions() {
 
 
 
+
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+
+}
 
   //  For Loop to select radmom elements from an array
   for (i=0 ; i<passwordlength; i++){
@@ -116,7 +133,7 @@ function getRandom(arr) {
       userPassword += arr[randomIndex]
   }
 
-}
+
 // Function to generate password with user input
 function generatePassword() {
 
