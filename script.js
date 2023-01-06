@@ -92,12 +92,12 @@ var upperCasedCharacters = [
 
 
 //Prompt For User to enter Password 
-let passwordlenght = +prompt("Your Password length")
+let passwordlength = +prompt("Your Password length");
 
-console.log(passwordlenght)
+console.log(passwordlength)
 
-
-
+//User Password 
+let userPassword = "";
 
 
 // Function to prompt user for password options
@@ -110,11 +110,17 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
+  //  For Loop to select radmom elements from an array
+  for (i=0 ; i<passwordlength; i++){
+    let randomIndex = Math.floor(Math.random()*arr.length)
+      userPassword += arr[randomIndex]
+  }
 
+}
 // Function to generate password with user input
 function generatePassword() {
 
-
+ 
 
 }
 
@@ -134,3 +140,5 @@ generateBtn.addEventListener('click', writePassword);
 
 
 
+getRandom(lowerCasedCharacters)
+console.log(userPassword)
