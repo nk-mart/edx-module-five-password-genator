@@ -107,6 +107,9 @@ let numeric = confirm('Character Type: Numeric')
 
 let specialCharacter = confirm('Character Type: Special-Characters')
 
+const defaultState= []
+const userPasswordOptionsArray = [] ;
+
  console.log(lowerCase, upperCase, numeric)
 
 
@@ -115,12 +118,31 @@ let userPassword = "";
 
 
 // Function to prompt user for password options
-function getPasswordOptions() {
+// function getPasswordOptions() {
+
+  if(lowerCase == true){
+
+    userPasswordOptionsArray.push(...lowerCasedCharacters)
+  }
+
+  if(upperCase == true){
+    userPasswordOptionsArray.push(...upperCasedCharacters)
+  }
+
+  if (numeric == true){
+    userPasswordOptionsArray.push(...numericCharacters)
+  }
+
+  if (specialCharacter == true ){
+    userPasswordOptionsArray.push(...specialCharacters)
+  }
+
+  if ((userPasswordOptionsArray == false) && (upperCase == false) && (numeric == false && (specialCharacter == false)) ){
+    alert("Password Must contain A Special Characters")
+  }
 
 
-
-
-}
+// }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -128,10 +150,11 @@ function getRandom(arr) {
 }
 
   //  For Loop to select radmom elements from an array
-  for (i=0 ; i<passwordlength; i++){
-    let randomIndex = Math.floor(Math.random()*arr.length)
-      userPassword += arr[randomIndex]
-  }
+
+  // for (i=0 ; i<passwordlength; i++){
+  //   let randomIndex = Math.floor(Math.random()*arr.length)
+  //     userPassword += arr[randomIndex]
+  // }
 
 
 // Function to generate password with user input
@@ -159,3 +182,5 @@ generateBtn.addEventListener('click', writePassword);
 
 getRandom(lowerCasedCharacters)
 console.log(userPassword)
+
+console.log(userPasswordOptionsArray)
