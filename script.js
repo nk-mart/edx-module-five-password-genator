@@ -107,7 +107,7 @@ let numeric = confirm('Character Type: Numeric')
 
 let specialCharacter = confirm('Character Type: Special-Characters')
 
-const defaultState= []
+
 const userPasswordOptionsArray = [] ;
 
  console.log(lowerCase, upperCase, numeric)
@@ -120,6 +120,8 @@ let userPassword = "";
 // Function to prompt user for password options
 // function getPasswordOptions() {
 
+
+// If Statements to Create Array Of the User Password Options
   if(lowerCase == true){
 
     userPasswordOptionsArray.push(...lowerCasedCharacters)
@@ -137,6 +139,7 @@ let userPassword = "";
     userPasswordOptionsArray.push(...specialCharacters)
   }
 
+  // If StateMent to Alert User The Password Must Contain A Special Character.
   if ((userPasswordOptionsArray == false) && (upperCase == false) && (numeric == false && (specialCharacter == false)) ){
     alert("Password Must contain A Special Characters")
   }
@@ -149,18 +152,17 @@ function getRandom(arr) {
 
 }
 
-  //  For Loop to select radmom elements from an array
-
-  // for (i=0 ; i<passwordlength; i++){
-  //   let randomIndex = Math.floor(Math.random()*arr.length)
-  //     userPassword += arr[randomIndex]
-  // }
-
+  
 
 // Function to generate password with user input
-function generatePassword() {
+function generatePassword(arr) {
 
- 
+  // For Loop to select radmom elements from an array
+
+  for (i=0 ; i<passwordlength; i++){
+    let randomIndex = Math.floor(Math.random()*arr.length)
+      userPassword += arr[randomIndex]
+  }
 
 }
 
@@ -169,18 +171,19 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  //var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  //passwordText.value = password;
+  passwordText.value = userPassword;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
 
+generatePassword(userPasswordOptionsArray)
 
-getRandom(lowerCasedCharacters)
+
 console.log(userPassword)
 
-console.log(userPasswordOptionsArray)
